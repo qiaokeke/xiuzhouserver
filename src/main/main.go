@@ -7,11 +7,18 @@ import (
 	"log"
 	"net"
 	"os"
+	"entity"
 )
 
 func main()  {
+	/**
+	全局map,保存读出的数据
+	 */
+	entity.PowerInfoMap = make(map[string] *entity.PowerInfo)
+
 	config.ConfigPath = "xiuzhou6030.json"
 	port := config.ReadConfig().Port
+
 	listener,err := net.Listen("tcp",""+":"+port)
 	defer listener.Close()
 	if err!=nil{
@@ -31,6 +38,4 @@ func main()  {
 	}
 
 
-
-	dao.Insert()
 }

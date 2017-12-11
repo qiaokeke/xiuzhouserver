@@ -12,7 +12,8 @@ var ConfigPath string
 
 type Config struct {
 	Port string
-	MeterIds [][][]byte
+	Cmds [][][]byte
+	MeterIds map[string] string
 }
 
 /**
@@ -25,7 +26,7 @@ func ReadConfig()  Config{
 	os := runtime.GOOS
 	path :=""
 	if strings.Compare(os,"windows")==0{
-		path = "C:\\work\\go\\xiuzhou\\src\\config\\"+ConfigPath
+		path = "C:\\work\\go\\xiuzhouserver\\src\\config\\"+ConfigPath
 	}else {
 		path = "/etc/xiuzhou/config/"+ConfigPath
 	}

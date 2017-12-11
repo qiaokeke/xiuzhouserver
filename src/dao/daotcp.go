@@ -2,10 +2,10 @@ package dao
 
 import (
 	"net"
-	"fmt"
 	"time"
 	"config"
 	"log"
+	"utils"
 )
 
 
@@ -16,7 +16,15 @@ func HandleRead(conn net.Conn)  {
 	defer conn.Close()
 	for{
 		recvBytes := make([]byte,1024)
-		
+		n,err :=conn.Read(recvBytes)
+		if err!=nil{
+			log.Println("read err:",err)
+			break
+		}
+		if n<=0{
+			continue
+		}
+		go utils.ParseData(recvBytes[:n])
 	}
 }
 
@@ -26,11 +34,11 @@ func HandleRead(conn net.Conn)  {
 func HandleWrite(conn net.Conn)  {
 	defer conn.Close()
 	for{
-		meterOrders := config.ReadConfig().MeterIds
-		for i:=0;i<len(meterOrders);i++{
-			for j:=0;j<len(meterOrders[i]);j++ {
-				log.Printf("write:% X\n",meterOrders[i][j])
-				_, e := conn.Write(meterOrders[i][j])
+		cmds := config.ReadConfig().Cmds
+		for i:=0;i<len(cmds);i++{
+			for j:=0;j<len(cmds[i]);j++ {
+				log.Printf("write:% X\n",cmds[i][j])
+				_, e := conn.Write(cmds[i][j])
 				if e != nil {
 					log.Println("write err:", e)
 					return;
