@@ -14,9 +14,17 @@ func main()  {
 	/**
 	全局map,保存读出的数据
 	 */
+
 	entity.PowerInfoMap = make(map[string] *entity.PowerInfo)
 
 	config.ConfigPath = "xiuzhou6030.json"
+
+	configPath:=os.Args[1]
+	config.ConfigPath = configPath
+	/**
+	获取参数文件
+	 */
+
 	port := config.ReadConfig().Port
 
 	listener,err := net.Listen("tcp",""+":"+port)
