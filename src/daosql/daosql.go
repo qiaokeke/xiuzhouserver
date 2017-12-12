@@ -34,6 +34,7 @@ func InsertAllInfos()  {
 	if err!=nil{
 		log.Fatal(err)
 	}
+	defer db.Close()
 	tx, err := db.Begin()
 	if err != nil {
 		log.Fatal(err)
