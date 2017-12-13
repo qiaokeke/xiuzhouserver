@@ -43,7 +43,7 @@ func HandleWrite(conn net.Conn)  {
 					log.Println("write err:", e)
 					return;
 				}
-				time.Sleep(120*time.Second)
+				time.Sleep(240*time.Second)
 			}
 		}
 		time.Sleep(5*time.Second)

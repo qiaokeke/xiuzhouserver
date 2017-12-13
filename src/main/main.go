@@ -22,7 +22,7 @@ func main()  {
 	configPath:=os.Args[1]
 	config.ConfigPath = configPath
 	/**
-	获取参数文件
+	获取参数文件dd
 	 */
 
 	port := config.ReadConfig().Port
