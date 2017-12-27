@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="43a5ce6e-539e-4383-9123-1b1f8363ea2f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/pkg/windows_amd64/config.a" afterPath="$PROJECT_DIR$/pkg/windows_amd64/config.a" />
-      <change beforePath="$PROJECT_DIR$/pkg/windows_amd64/dao.a" afterPath="$PROJECT_DIR$/pkg/windows_amd64/dao.a" />
-      <change beforePath="$PROJECT_DIR$/pkg/windows_amd64/daosql.a" afterPath="$PROJECT_DIR$/pkg/windows_amd64/daosql.a" />
-      <change beforePath="$PROJECT_DIR$/pkg/windows_amd64/entity.a" afterPath="$PROJECT_DIR$/pkg/windows_amd64/entity.a" />
-      <change beforePath="$PROJECT_DIR$/pkg/windows_amd64/utils.a" afterPath="$PROJECT_DIR$/pkg/windows_amd64/utils.a" />
       <change beforePath="$PROJECT_DIR$/src/config/config.go" afterPath="$PROJECT_DIR$/src/config/config.go" />
-      <change beforePath="$PROJECT_DIR$/src/config/xiuzhou6030.json" afterPath="$PROJECT_DIR$/src/config/xiuzhou6030.json" />
-      <change beforePath="$PROJECT_DIR$/src/config/xiuzhou6031.json" afterPath="$PROJECT_DIR$/src/config/xiuzhou6031.json" />
-      <change beforePath="$PROJECT_DIR$/src/config/xiuzhou6032.json" afterPath="$PROJECT_DIR$/src/config/xiuzhou6032.json" />
-      <change beforePath="$PROJECT_DIR$/src/config/xiuzhou6033.json" afterPath="$PROJECT_DIR$/src/config/xiuzhou6033.json" />
-      <change beforePath="$PROJECT_DIR$/src/dao/daotcp.go" afterPath="$PROJECT_DIR$/src/dao/daotcp.go" />
-      <change beforePath="$PROJECT_DIR$/src/daosql/daosql.go" afterPath="$PROJECT_DIR$/src/daosql/daosql.go" />
-      <change beforePath="$PROJECT_DIR$/src/main/main.go" afterPath="$PROJECT_DIR$/src/main/xiuzhou.go" />
-      <change beforePath="$PROJECT_DIR$/src/utils/dataparse.go" afterPath="$PROJECT_DIR$/src/utils/dataparse.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/config/config.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="380">
+              <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -47,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xiuzhou6030.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xiuzhou6030.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config/xiuzhou6030.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="285">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -91,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/xiuzhou.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -164,13 +151,13 @@
         <option value="$PROJECT_DIR$/src/entity/TcpStaticInfo.go" />
         <option value="$PROJECT_DIR$/src/utils/checkdata.go" />
         <option value="$PROJECT_DIR$/src/dao/daotcp.go" />
-        <option value="$PROJECT_DIR$/src/config/config.go" />
         <option value="$PROJECT_DIR$/src/config/xiuzhou6030.json" />
         <option value="$PROJECT_DIR$/src/utils/dataparse.go" />
         <option value="$PROJECT_DIR$/src/daosql/daosql.go" />
         <option value="$PROJECT_DIR$/src/config/xiuzhou6031.json" />
         <option value="$PROJECT_DIR$/src/config/xiuzhou6032.json" />
         <option value="$PROJECT_DIR$/src/config/xiuzhou6033.json" />
+        <option value="$PROJECT_DIR$/src/config/config.go" />
       </list>
     </option>
   </component>
@@ -225,12 +212,6 @@
               <item name="xiuzhouserver" type="b2602c69:ProjectViewProjectNode" />
               <item name="xiuzhouserver" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xiuzhouserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xiuzhouserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="daosql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -238,12 +219,6 @@
               <item name="xiuzhouserver" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xiuzhouserver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xiuzhouserver" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -696,22 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/xiuzhou.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/daosql/daosql.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
@@ -764,8 +723,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/config/xiuzhou6030.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state relative-caret-position="285">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/xiuzhou.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
           <folding />
         </state>
       </provider>
