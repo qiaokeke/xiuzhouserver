@@ -8,27 +8,63 @@ import (
 	"config"
 	"entity"
 	"daosql"
+	"net"
 )
 
 
 
-func ParseData(sbytes []byte)  {
+func ParseData(sbytes []byte,conn net.Conn)  {
 	defer func() {
 		if x := recover();x!=nil{
 			log.Println("parseData err")
 		}
 	}()
 	log.Printf("parseData: % X\n",sbytes)
-	ParseZXYGDN(sbytes)
+	if(!CheckData(sbytes)){
+		log.Println("check data error")
+		return
+	}
+	if bytes.Contains(sbytes,[]byte{0,0,1,0}){
+		ParseQueRen(sbytes,conn)
+		return
+	}
+	if bytes.Contains(sbytes,[]byte{2,1,1,16}){
+		ParseZXYGDN(sbytes)
+		return
+	}
 
+
+	//默认原样输出
+	log.Printf("%cant read data:% X\n",sbytes)
+}
+
+func getInfos(sbytes []byte) (byte,int){
+	datatype := sbytes[12]
+	dataseq := int(sbytes[13])%16
+
+	return datatype,dataseq
+}
+
+func ParseQueRen(sbytes []byte,conn net.Conn)  {
+	//确认帧
+	log.Println("确认帧")
+	index:= bytes.Index(sbytes,[]byte{0,0,1,0})
+	dataSeq :=int(sbytes[index-1])%16
+	dataCrc := dataSeq+42
+	dataSeq +=6*16
+
+	wbytes := []byte{0x68,0x32,0x00,0x32,0x00,0x68,0x4B ,0x99,0x99 ,0x99 ,0x99 ,0x1A ,0x00,byte(dataSeq), 0x00 ,0x00 ,0x01,0x00, byte(dataCrc) ,0x16 }
+
+	log.Printf("write:% X\n",wbytes)
+	conn.Write(wbytes)
 }
 
 
 /**
-	解析正向有功总电能bytes
+	以下解析正向有功总电能bytes
  */
 func ParseZXYGDN(sbytes []byte)  {
-	if !bytes.Contains(sbytes,[]byte{0x1A,0x0C}){
+	if !bytes.Contains(sbytes,[]byte{0x02,0x01,0x01,0x10}){
 		return
 	}
 	log.Println("ParseZXYGDN")
@@ -78,13 +114,14 @@ func ParseZXYGDN(sbytes []byte)  {
 		zxygdn4 := parse5bytes2float(zxygdn4Bytes)
 		log.Printf("zxydn4:% X\t%f\n",zxygdn4Bytes,zxygdn4)
 		entity.PowerInfoMap[meterId].Zxygdn4=zxygdn4
-
 		index+= 35
 	}
 
-	daosql.InsertAllInfos()
+	go daosql.InsertAllInfos(config.ReadConfig().DataSource)
+	//go daosql.InsertAllInfos(config.ReadConfig().DataSource2)
 
 }
+
 /**
 	将5个字节的bcd bytes转换为float
  */

@@ -9,11 +9,11 @@ import (
 	"entity"
 )
 
-func InsertAllInfos()  {
+func InsertAllInfos(datasource string)  {
 	log.Println("Dao insert")
 	defer func() {
 		if x := recover();x!=nil{
-			log.Println("inset,err,flag")
+			log.Println("insert,err,flag")
 			return
 		}
 	}()
@@ -30,19 +30,22 @@ func InsertAllInfos()  {
 					"?,?,?,?,?," +
 					"?,?" +
 				")"
-	db, err:= sql.Open("mysql", "root:Aa651830@tcp(120.27.227.95:3306)/xiuzhou?charset=utf8")
+	db, err:= sql.Open("mysql", datasource)
 	if err!=nil{
-		log.Fatal(err)
+		log.Fatal("open err:",err)
+		return
 	}
 	defer db.Close()
 	tx, err := db.Begin()
 	if err != nil {
 		log.Fatal(err)
+		return
 	}
 	defer tx.Rollback()
 	stmt, err := tx.Prepare(sqlString)
 	if err != nil {
 		log.Fatal(err)
+		return
 	}
 	defer stmt.Close()
 

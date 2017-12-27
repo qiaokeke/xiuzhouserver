@@ -24,13 +24,13 @@ func HandleRead(conn net.Conn)  {
 		if n<=0{
 			continue
 		}
-		go utils.ParseData(recvBytes[:n])
+		go utils.ParseData(recvBytes[:n],conn)
 	}
 }
 
 /**
 	处理写入消息
- */
+*/
 func HandleWrite(conn net.Conn)  {
 	defer conn.Close()
 	for{

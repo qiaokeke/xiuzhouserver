@@ -14,6 +14,8 @@ type Config struct {
 	Port string
 	Cmds [][][]byte
 	MeterIds map[string] string
+	DataSource string
+	DataSource2 string
 }
 
 /**
